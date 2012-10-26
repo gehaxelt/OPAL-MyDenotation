@@ -1,0 +1,9 @@
+SIGNATURE MyDenotation
+
+IMPORT Denotation COMPLETELY
+IMPORT Nat COMPLETELY
+
+-- Reverses a denotation
+-- @param: Denotation to be reversed
+-- @return: Reversed denotation
+FUN reverse : denotation -> denotation

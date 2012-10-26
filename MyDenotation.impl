@@ -1,0 +1,11 @@
+IMPLEMENTATION MyDenotation
+
+-- Reverses a denotation
+-- @param: Denotation to be reversed
+-- @return: Reversed denotation
+DEF reverse == \\str.
+        IF ( #(str) > 0 ) THEN
+        slice(str,#(str)-1,#(str)-1) ++ reverse(delete(str, #(str)-1,#(str)-1))
+        ELSE ""
+        FI
+
