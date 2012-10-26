@@ -9,3 +9,17 @@ DEF reverse == \\str.
         ELSE ""
         FI
 
+-- Replaces a character in a denotation
+-- @param: Denotation in which characters will be replaced
+-- @param: Char to search
+-- @param: Char to replace with
+-- @return: Denotation with replaced characters
+DEF replaceChar == \\str, search, replace.
+	IF ( search = replace) THEN str
+
+	IF ( #(str) > 0 ) THEN
+		IF ( !(slice(str,0,0)) = search ) THEN %(replace) ++ replaceChar(delete(str,0,0),search,replace)
+		ELSE slice(str,0,0) ++ replaceChar(delete(str,0,0),search,replace)
+		FI
+	ELSE ""
+	FI

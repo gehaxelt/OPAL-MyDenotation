@@ -2,8 +2,16 @@ SIGNATURE MyDenotation
 
 IMPORT Denotation COMPLETELY
 IMPORT Nat COMPLETELY
+IMPORT Char COMPLETELY
 
 -- Reverses a denotation
 -- @param: Denotation to be reversed
 -- @return: Reversed denotation
 FUN reverse : denotation -> denotation
+
+-- Replaces a character in a denotation
+-- @param: Denotation in which characters will be replaced
+-- @param: Char to search
+-- @param: Char to replace with
+-- @return: Denotation with replaced characters
+FUN replaceChar : denotation ** char ** char -> denotation
