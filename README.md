@@ -13,3 +13,8 @@ Some missing operations for denotations in OPAL.
 
 	e replaceChar("abc",!"b",!"g") -- -> agc
 
+- Find first occurance of a char in a denotation
+
+	e findChar("abc",!"b") -- -> 2
+
+

@@ -23,3 +23,19 @@ DEF replaceChar == \\str, search, replace.
 		FI
 	ELSE ""
 	FI
+
+
+DEF findChar == \\str, charfind.
+	findCharRek(str,charfind,1)
+
+-- Helper function for rekursive findChar
+FUN findCharRek : denotation ** char ** nat -> nat
+DEF findCharRek == \\str, charfind, curpos.
+	IF ( #(str) > 0) THEN
+                IF ( !(slice(str,0,0)) = charfind ) THEN curpos
+		ELSE findCharRek(delete(str,0,0),charfind,(curpos+1))
+		FI
+        ELSE 0
+        FI
+
+
